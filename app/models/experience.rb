@@ -11,4 +11,5 @@ class Experience < ApplicationRecord
   validates :availability, presence: true
   validates :description, presence: true, length: { minimum: 100 }
   validates :place, presence: true
+  has_one_attached :photo
 end
