@@ -12,6 +12,23 @@
   </head>
 
   <body>
+
+   <!-- NAV BAR -->
+    <div class="navbar bg-white py-3 px-4">
+      <%= image_tag "feel.png", class: "logoFeel", alt:"logo", type: "image" %>
+      <div class="nav-bar-right d-flex align-items-center">
+        <div class="dropdown  d-none d-sm-block">
+          <%= image_tag "vector.jpeg", class: "avatar", alt:"avatar", type: "image", id: "dropdownMenuButton", data: { toggle:"dropdown" }, aria: { haspopup:"true", expanded: "false" } %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+            <%= link_to "Log In", "#", class: "dropdown-item" %>
+            <%= link_to "Sign In", "#", class: "dropdown-item" %>
+            <%= link_to "Add an experience", "#", class: "dropdown-item" %>
+          </div>
+        </div>
+      </div>
+    </div>
+   <!-- END OF NAV BAR -->
+
     <%= yield %>
   </body>
 </html>
