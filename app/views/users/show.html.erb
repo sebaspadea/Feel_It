@@ -1,0 +1,39 @@
+<div class="container my-3">
+  <div class="text-center ">
+    <h1>Welcome <%= @user.first_name %> <%= @user.last_name %></h1>
+  </div>
+</div>
+<div class="my-5 py-5">
+      <h2>My personal info</h2>
+      <h4>Username: <%= @user.username %></h4>
+      <h4>Mail: <%= @user.email %></h4>
+      <h4>Phone: <%= @user.phone_number %></h4>
+      <h4>Address: <%= @user.address %></h4>
+</div>
+<div class="my-5 py-5">
+  <h2>My experiences</h2>
+  <ul>
+    <% if @experiences.any? %>
+      <% @experiences.each do |experience| %>
+      <li><%= experience.name %></li>
+      <% end %>
+    <% else %>
+      <li>You still have no experiences</li>
+    <% end %>
+  </ul>
+</div>
+<div class="my-5 py-5">
+  <h2>My bookings</h2>
+  <ul>
+    <% if @bookings.any? %>
+      <% @bookings.each do |booking| %>
+        <li>Status: <%= booking.status %> | Name: <%= booking.experience.name %> | Description: <%= booking.experience.description %> | Date: <%= booking.date %> | Price: <%= booking.experience.price %> </li>
+      <% end %>
+    <% else %>
+      <li>You still have no bookings yet</li>
+    <% end %>
+  </ul>
+</div>
+
+
+
