@@ -22,6 +22,8 @@ class ExperiencesController < ApplicationController
 
   def show
     @experience = Experience.find(params[:id])
+    @user = @experience.user
+
     # authorize @experience
   end
 

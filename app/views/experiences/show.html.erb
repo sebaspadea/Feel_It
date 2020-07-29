@@ -1,1 +1,48 @@
 
+<div class="show-banner" style= "background-image: url(<%= cl_image_path @experience.photo.key %>);" >
+  <div class="container">
+   <h2 class="experience-title"><%= @experience.name %></h2>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title"><%= @experience.name %></h4>
+          <p>Experiencia ofrecida por <%= @user.username %></p>
+          <br>
+          <p class="card-text"><%= @experience.description %></p>
+          <br>
+          <div class="availability">
+            <p>Disponibilidad <%= @experience.availability %></p>
+          </div>
+          <div class="categoria-experiencia">
+            <p>Category <%= @experience.category %></p>
+          </div>
+          <div class="categoria-experiencia">
+            <p>Lugar <%= @experience.place%></p>
+          </div>
+          <div class="categoria-experiencia">
+            <h4>$<%= @experience.price%></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Booking</h5>
+          <p class="card-text"><h4>Precio <%= @experience.price %></h4></p>
+          <%= link_to "Comprar", new_experience_booking_path(@experience.id) , class: "btn btn-outline-warning" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+

@@ -14,14 +14,12 @@
   <body>
 
    <!-- NAV BAR -->
-    <div class="navbar bg-white py-3 px-4">
+    <div class="navbar d-flex justify-content-between bg-white py-3 px-4">
 
       <%= link_to root_path do %>
       <%= image_tag "feel.png", class: "logoFeel"  %>
-    <% end %>
-
-
-      <div class="nav-bar-right d-flex align-items-center">
+      <% end %>
+      <div class="align-items-center">
         <div class="dropdown  d-none d-sm-block">
           <%= image_tag "vector.jpg", class: "avatar", alt:"avatar", type: "image", id: "dropdownMenuButton", data: { toggle:"dropdown" }, aria: { haspopup:"true", expanded: "false" } %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
