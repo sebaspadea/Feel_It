@@ -38,7 +38,7 @@
             <p> $ <%= experience.price %></p>
             <div class="">
               <%# Booking %>
-              <a class="btn btn-dark"href=#>Book</a>
+              <%= link_to "Book", new_experience_booking_path(experience.id), class: "btn btn-dark"%>
               <%# VER MAS %>
 
               <%= link_to "Ver Mas", user_experience_path(experience.user_id, experience.id) , class: "btn btn-outline-warning" %>
