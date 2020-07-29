@@ -3,37 +3,61 @@
     <h1>Welcome <%= @user.first_name %> <%= @user.last_name %></h1>
   </div>
 </div>
-<div class="my-5 py-5">
-      <h2>My personal info</h2>
-      <h4>Username: <%= @user.username %></h4>
-      <h4>Mail: <%= @user.email %></h4>
-      <h4>Phone: <%= @user.phone_number %></h4>
-      <h4>Address: <%= @user.address %></h4>
-</div>
-<div class="my-5 py-5">
-  <h2>My experiences</h2>
-  <ul>
-    <% if @experiences.any? %>
-      <% @experiences.each do |experience| %>
-      <li><%= experience.name %></li>
-      <% end %>
-    <% else %>
-      <li>You still have no experiences</li>
-    <% end %>
-  </ul>
-</div>
-<div class="my-5 py-5">
-  <h2>My bookings</h2>
-  <ul>
-    <% if @bookings.any? %>
-      <% @bookings.each do |booking| %>
-        <li>Status: <%= booking.status %> | Name: <%= booking.experience.name %> | Description: <%= booking.experience.description %> | Date: <%= booking.date %> | Price: <%= booking.experience.price %> </li>
-      <% end %>
-    <% else %>
-      <li>You still have no bookings yet</li>
-    <% end %>
-  </ul>
-</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">My personal info</h2>
+          <br>
+          <h6>Username: <%= @user.username %></h6>
+          <h6>Mail: <%= @user.email %></h6>
+          <h6>Phone: <%= @user.phone_number %></h6>
+          <h6>Address: <%= @user.address %></h6>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">My experiences</h2>
+          <br>
+           <ul>
+            <% if @experiences.any? %>
+              <% @experiences.each do |experience| %>
+              <li><%= experience.name %></li>
+              <% end %>
+            <% else %>
+              <li>You still have no experiences</li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 my-3">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">My bookings</h2>
+          <br>
+          <ul>
+            <% if @bookings.any? %>
+              <% @bookings.each do |booking| %>
+                <li>Status: <%= booking.status %> | Name: <%= booking.experience.name %> | Date: <%= booking.date %> | Price: <%= booking.experience.price %> </li>
+                <% end %>
+            <% else %>
+                <li>You still have no bookings yet</li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 
 

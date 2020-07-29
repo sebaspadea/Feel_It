@@ -9,7 +9,7 @@ class Experience < ApplicationRecord
   validates :category, inclusion: { in: CATEGORY }
   validates :price, presence: true
   validates :availability, presence: true
-  validates :description, presence: true, length: { minimum: 100 }
+  validates :description, presence: true, length: { minimum: 20 }
   validates :place, presence: true
   has_one_attached :photo
 end
