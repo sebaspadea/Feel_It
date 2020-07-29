@@ -40,7 +40,8 @@
               <%# Booking %>
               <a class="btn btn-dark"href=#>Book</a>
               <%# VER MAS %>
-              <button type="button" class="btn btn-outline-warning">Ver Mas</button>
+
+              <%= link_to "Ver Mas", user_experience_path(experience.user_id, experience.id) , class: "btn btn-outline-warning" %>
           </div>
         </div>
       <% end %>
