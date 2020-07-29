@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     end
   end
 
-   def new
+  def new
     # authorize @booking
     @user = User.find(params[:user_id])
     @booking = Booking.new
