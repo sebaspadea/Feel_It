@@ -8,7 +8,7 @@
       <%= f.input :availability, :label => "Ingresa tu disponibilidad:",placeholder:"Disponibilidad"  %>
       <%= f.input :description,  :label => "Describe tu experiencia:", placeholder:"Describa de la experiencia", class: "exs" %>
       <%= f.input :price,  :label => "Precio de su experiencia:",placeholder:"Precio de su experiencia:", class: "exs" %>
-       <%= f.input :place,  :label => "Lugar",placeholder:"Lugar de la experiencia", class: "exs" %>
+       <%= f.input :place,  :label => "Lugar",placeholder:"Lugar de la experiencia", class: "exs", input_html: {id: "experience_place"} %>
       <%= f.input :photo, as: :file, class:"boton subir"  %>
       <%= f.submit "Agregar", class:"btn btn-dark" %>
 
