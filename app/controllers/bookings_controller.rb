@@ -1,21 +1,23 @@
 class BookingsController < ApplicationController
 
+  def new
+    # authorize @booking
+    @experience = Experience.find(params[:experience_id])
+    @booking = Booking.new
+  end
+
   def create
     # authorize @booking
-    @user = User.find(params[:user_id])
+    @experience = Experience.find(params[:experience_id])
     @booking  = Booking.new(booking_params)
-    @booking.user = @user
-    if @booking.save
-      redirect_to user_path(@booking.user)
+    @booking.experience = @experience
+    @booking.user = current_user
+    @booking.status = "Proxima"
+    if @booking.save!
+      redirect_to user_path(current_user)
     else
       render :new
     end
-  end
-
-  def new
-    # authorize @booking
-    @user = User.find(params[:user_id])
-    @booking = Booking.new
   end
 
   def destroy
@@ -28,7 +30,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-   params.require(:booking).permit(:date, :experience_id, :user_id)
+   params.require(:booking).permit(:date)
   end
 
 end
