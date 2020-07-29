@@ -22,32 +22,33 @@
 
 
 
-
 <div class="container">
-<h2> Mejores experiencias del mes </h2>
-
-
-  <div class="card-trip">
-     <% @experiences.each do |experience| %>
-        <div class="col-md-3 my-3">
+  <h1 class="text-center mt-3 mb-4">Experiencias destacadas</h1>
+  <div class="row">
+      <% @experiences.each do |experience| %>
+        <div class="col-md-4 my-3">
           <div class="card-img-top">
-          <% if experience.photo.attached? %>
-            <%= cl_image_tag experience.photo.key, height: 300, width: 300, crop: :fill, class: "img-fluid" %>
-          <% else %>
-            <%= cl_image_tag "no disponible", height: 300, width: 300, crop: :fill, class: "img-fluid" %>
-          <% end %>
-    <div class="card-trip-infos">
-      <div>
-        <h5 class="card-title"><%= experience["name"] %></h5>
-      </div>
-      <h4 class="card-trip-pricing">$<%= experience["price"] %></h4>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+            <% if experience.photo.attached? %>
+              <%= cl_image_tag experience.photo.key, height: 300, width: 300, crop: :fill, class: "img-fluid" %>
+            <% else %>
+              <%= cl_image_tag "no disponible", height: 300, width: 300, crop: :fill, class: "img-fluid" %>
+            <% end %>
+          </div>
+            <h5 class="card-title"><%= experience.name %></h5>
+            <p> $ <%= experience.price %></p>
+            <div class="">
+              <%# Booking %>
+              <a class="btn btn-dark"href=#>Book</a>
+              <%# VER MAS %>
+              <button type="button" class="btn btn-outline-warning">Ver Mas</button>
+          </div>
+        </div>
       <% end %>
-    </div>
-  </div>
-  </div>
-  </div>
   </div>
 </div>
+
+
+
+
 
 
