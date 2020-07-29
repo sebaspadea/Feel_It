@@ -2,12 +2,12 @@
   background-image: image-url("yellow.jpeg");
   justify-content: space-around;
   background-size: cover;
-  height: 100vh;
+  height: 80vh;
   color: #eee;
   text-align: center;
   padding-top: 40vh;
-
-
+  background-position: center;
+  object-fit: cover;
 }
 
 .show-banner {
