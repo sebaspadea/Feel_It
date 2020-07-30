@@ -1,3 +1,4 @@
+
 <div class="container my-3">
   <div class="text-center ">
     <h1>Welcome <%= @user.first_name %> <%= @user.last_name %></h1>
@@ -45,9 +46,12 @@
           <ul>
             <% if @bookings.any? %>
               <% @bookings.each do |booking| %>
-                <li>Status: <%= booking.status %> | Name: <%= booking.experience.name %> | Date: <%= booking.date %> | Price: <%= booking.experience.price %> 
+
+                <li>Status: <%= booking.status %> | Name: <%= booking.experience.name %> | Date: <%= booking.date %> | Price: <%= booking.experience.price %> <%  if booking.status != "Cancelada"  %>
+                 <%= link_to "Editar", edit_experience_booking_path(booking.experience.id, booking.id ), class: "btn btn-outline-warning" %>
+                <% end %>
                 <%  if booking.status == "Completada"  %>
-                <%= link_to "Make a Review",  new_experience_review_path(booking.experience),  class: "btn btn-outline-warning"%> 
+                <%= link_to "Make a Review",  new_experience_review_path(booking.experience),  class: "btn btn-outline-warning"%>
                 <% end %></li>
                 <% end %>
             <% else %>
@@ -58,7 +62,3 @@
       </div>
     </div>
   </div>
-
-
-
-
