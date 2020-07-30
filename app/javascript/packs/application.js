@@ -25,6 +25,8 @@ require("channels")
 // External imports
 import "bootstrap";
 import {initAutocomplete} from '../plugins/init_autocomplete';
+import { initMapbox } from '../plugins/init_mapbox';
+
 
 
 // Internal imports, e.g:
@@ -35,4 +37,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initAutocomplete("experience_place")
   initAutocomplete("user_address")
+  initMapbox();
 });

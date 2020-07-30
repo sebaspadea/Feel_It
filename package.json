@@ -2,12 +2,14 @@
   "name": "Feel_It",
   "private": true,
   "dependencies": {
+    "@mapbox/mapbox-gl-geocoder": "^4.6.0",
     "@rails/actioncable": "^6.0.0-alpha",
     "@rails/activestorage": "^6.0.0-alpha",
     "@rails/ujs": "^6.0.0-alpha",
     "@rails/webpacker": "4.2.2",
     "bootstrap": "^4.5.0",
     "jquery": "^3.5.1",
+    "mapbox-gl": "^1.11.1",
     "places.js": "^1.19.0",
     "popper.js": "^1.16.1",
     "turbolinks": "^5.2.0"
