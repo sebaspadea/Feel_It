@@ -13,10 +13,11 @@ class BookingsController < ApplicationController
   def create
     # authorize @booking
     @experience = Experience.find(params[:experience_id])
-    @booking  = Booking.new(booking_params)
+    @booking = Booking.new(booking_params)
     @booking.experience = @experience
     @booking.user = current_user
-    @booking.status =
+    @booking.status = "Proxima"
+
     if @booking.save!
       redirect_to user_path(current_user)
     else
@@ -25,6 +26,9 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    @experience = Experience.find(params[:experience_id])
+    @booking = Booking.find(params[:id])
+
   end
 
   def update
@@ -33,6 +37,11 @@ class BookingsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def status_cancelado
+    @experience = Experience.find(params[:experience_id])
+    @booking.status = "cancelado"
   end
 
   def destroy
