@@ -1,4 +1,6 @@
 class ExperiencesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:show]
+  
   def index
     # @experiences = policy_scope(Experience)
     @experiences = Experience.all
