@@ -27,11 +27,11 @@
            <ul>
             <% if @experiences.any? %>
               <% @experiences.each do |experience| %>
-              <li><%= experience.name %></li>
+              <li><%= experience.name %> <%= link_to "Edit", edit_experience_path(experience["id"]),  class: "btn btn-outline-success"%> <%= link_to "Delete", experience_path(experience), class: "btn btn-outline-danger m-2", method: :delete, data: { confirm: "Are you sure?"} %></li>
               <% end %>
             <% else %>
               <li>You still have no experiences</li>
-            <% end %>
+              <% end %>
           </ul>
         </div>
       </div>
