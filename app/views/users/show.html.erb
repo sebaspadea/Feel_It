@@ -93,7 +93,10 @@
           <ul>
             <% if @bookings.any? %>
               <% @bookings.each do |booking| %>
-                <li>Status: <%= booking.status %> | Name: <%= booking.experience.name %> | Date: <%= booking.date %> | Price: <%= booking.experience.price %> </li>
+                <li>Status: <%= booking.status %> | Name: <%= booking.experience.name %> | Date: <%= booking.date %> | Price: <%= booking.experience.price %> 
+                <%  if booking.status == "Completada"  %>
+                <%= link_to "Make a Review",  new_experience_review_path(booking.experience),  class: "btn btn-outline-warning"%> 
+                <% end %></li>
                 <% end %>
             <% else %>
                 <li>You still have no bookings yet</li>

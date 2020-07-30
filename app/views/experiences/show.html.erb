@@ -7,7 +7,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-md-6">
       <div class="card">
         <div class="card-body">
           <h4 class="card-title"><%= @experience.name %></h4>
@@ -30,7 +30,7 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-md-6">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Booking</h5>
@@ -39,6 +39,15 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="row">
+    <h3 class="mt-5 mb-3 border-bottom border-warning">Reviews</h3>
+    <div class="col-md-12">
+      <ul class="list-group review-form">
+        <% @experience.reviews.each do |review| %>
+        <li class="list-group-item"><%="⭐"*review.rating %> <%= review.content %></li>
+      <% end %>
+    </ul>
   </div>
 </div>
 
