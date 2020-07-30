@@ -1,10 +1,10 @@
 
 <div class="container">
   <div class="form-group text-center">
-      <%= simple_form_for  [@booking, @experience] do |f| %>
+      <%= simple_form_for [@experience, @booking] do |f| %>
       <%= f.input :date,  :label => "Fecha de la reserva",placeholder:"Fecha de la reserva", class: "experiencia" %>
-      <%= f.input :status,  :label => "Status de la reserva",placeholder:"Proxima", class: "experiencia" %>
-      <%= f.submit "Modificar", class:"btn btn-dark", message: "La reserve a sido modificada" %>
+      <%= f.input :status, collection: Booking::ESTADO, :label => "Status de la reserva",placeholder:"Próxima", class: "experiencia" %>
+      <%= f.submit "Modificar", class:"btn btn-dark", message: "La reserva ha sido modificada" %>
       <% end %>
   </div>
 </div>

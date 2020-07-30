@@ -2,6 +2,7 @@ class Experience < ApplicationRecord
   belongs_to :user # seller
   has_many :bookings
   has_many :users, through: :bookings # users
+  has_many :reviews
 
   CATEGORY = %w(Gastronomia Deportes Entretenimiento Cultura)
 

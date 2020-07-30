@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.experience = @experience
     @booking.user = current_user
-    @booking.status = "Proxima"
+    @booking.status = "Próxima"
 
     if @booking.save!
       redirect_to user_path(current_user)
@@ -32,16 +32,12 @@ class BookingsController < ApplicationController
   end
 
   def update
+    @booking = Booking.find(params[:id])
     if @booking.update(booking_params)
       redirect_to user_path(current_user)
     else
       render 'edit'
     end
-  end
-
-  def status_cancelado
-    @experience = Experience.find(params[:experience_id])
-    @booking.status = "cancelado"
   end
 
   def destroy

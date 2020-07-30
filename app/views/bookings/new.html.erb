@@ -1,9 +1,10 @@
 
-<div class="form-group text-center">
-    <%= simple_form_for [@experience, @booking] do |f| %>
-    <%= f.input :date,  :label => "Fecha de la reserva",placeholder:"Fecha de la reserva", class: "experiencia" %>
-    <%= f.submit "Comprar", class:"btn btn-dark", message: "Gracias por su compra!" %>
-    <% end %>
-
-
+<div class="container">
+  <div class="form-group text-center">
+      <%= simple_form_for [@experience, @booking] do |f| %>
+      <%= f.input :date,  :label => "Fecha de la reserva",placeholder:"Fecha de la reserva", class: "experiencia" %>
+      <%= f.submit "Comprar", class:"btn btn-dark", message: "Gracias por su compra!" %>
+      <% end %>
+  </div>
+</div>
 
