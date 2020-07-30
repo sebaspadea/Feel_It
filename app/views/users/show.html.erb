@@ -3,6 +3,52 @@
     <h1>Welcome <%= @user.first_name %> <%= @user.last_name %></h1>
   </div>
 </div>
+<<<<<<< HEAD
+<div class="my-5 py-5">
+      <h2>My personal info</h2>
+      <h4>Username: <%= @user.username %></h4>
+      <h4>Mail: <%= @user.email %></h4>
+      <h4>Phone: <%= @user.phone_number %></h4>
+      <h4>Address: <%= @user.address %></h4>
+</div>
+<div class="my-5 py-5">
+  <h2>My experiences</h2>
+  <ul>
+    <% if @experiences.any? %>
+      <% @experiences.each do |experience| %>
+      <li><%= experience.name %></li>
+      <% end %>
+    <% else %>
+      <li>You still have no experiences</li>
+    <% end %>
+  </ul>
+</div>
+<div class="my-5 py-5">
+  <h2>My bookings</h2>
+  <ul>
+    <% if @bookings.any? %>
+      <% @bookings.each do |booking| %>
+        <li>Status:  <%= booking.status %> | Name: <%= booking.experience.name %> | Description: <%= booking.experience.description %> | Date: <%= booking.date %> | Price: <%= booking.experience.price %> </li>         <div id="navbarCollapse">
+              <ul class="nav navbar-nav">
+                <li class="dropdown">
+                  <a data-toggle="dropdown" class="dropdown-toggle"  class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Próxima</a></li>
+                    <li><a href="#">Aceptada</a></li>
+                    <li><a href="#">Completada</a></li>
+                    <li><a href="#">Cancelada</a></li>
+                  </ul>
+                </li>
+              </ul>
+           </div>
+      <% end %>
+    <% else %>
+      <li>You still have no bookings yet</li>
+    <% end %>
+
+   </ul>
+</div>
+=======
 
 
 <div class="container">
@@ -27,11 +73,11 @@
            <ul>
             <% if @experiences.any? %>
               <% @experiences.each do |experience| %>
-              <li><%= experience.name %></li>
+              <li><%= experience.name %> <%= link_to "Edit", edit_experience_path(experience["id"]),  class: "btn btn-outline-success"%> <%= link_to "Delete", experience_path(experience), class: "btn btn-outline-danger m-2", method: :delete, data: { confirm: "Are you sure?"} %></li>
               <% end %>
             <% else %>
               <li>You still have no experiences</li>
-            <% end %>
+              <% end %>
           </ul>
         </div>
       </div>
@@ -47,7 +93,10 @@
           <ul>
             <% if @bookings.any? %>
               <% @bookings.each do |booking| %>
-                <li>Status: <%= booking.status %> | Name: <%= booking.experience.name %> | Date: <%= booking.date %> | Price: <%= booking.experience.price %> </li>
+                <li>Status: <%= booking.status %> | Name: <%= booking.experience.name %> | Date: <%= booking.date %> | Price: <%= booking.experience.price %> 
+                <%  if booking.status == "Completada"  %>
+                <%= link_to "Make a Review",  new_experience_review_path(booking.experience),  class: "btn btn-outline-warning"%> 
+                <% end %></li>
                 <% end %>
             <% else %>
                 <li>You still have no bookings yet</li>
@@ -58,6 +107,7 @@
     </div>
   </div>
 
+>>>>>>> master
 
 
 

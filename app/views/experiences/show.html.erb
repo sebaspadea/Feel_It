@@ -7,6 +7,7 @@
 
 <div class="container">
   <div class="row">
+
     <div class="col-sm-6">
       <div class="card-show">
         <div class="card-body">
@@ -30,15 +31,25 @@
         </div>
       </div>
     </div>
+
     <div class="col-sm-6">
       <div class="card-booking">
-        <div class="card-body">
+         <div class="card-body">
           <h5 class="card-title">Booking</h5>
           <p class="card-text"><h4>Precio <%= @experience.price %></h4></p>
           <%= link_to "Comprar", new_experience_booking_path(@experience.id) , class: "btn btn-outline-warning" %>
         </div>
       </div>
     </div>
+  </div>
+  <div class="row">
+    <h3 class="mt-5 mb-3 border-bottom border-warning">Reviews</h3>
+    <div class="col-md-12">
+      <ul class="list-group review-form">
+        <% @experience.reviews.each do |review| %>
+        <li class="list-group-item"><%="⭐"*review.rating %> <%= review.content %></li>
+      <% end %>
+    </ul>
   </div>
 </div>
 
