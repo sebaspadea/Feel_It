@@ -27,12 +27,25 @@
   <ul>
     <% if @bookings.any? %>
       <% @bookings.each do |booking| %>
-        <li>Status: <%= booking.status %> | Name: <%= booking.experience.name %> | Description: <%= booking.experience.description %> | Date: <%= booking.date %> | Price: <%= booking.experience.price %> </li>
+        <li>Status:  <%= booking.status %> | Name: <%= booking.experience.name %> | Description: <%= booking.experience.description %> | Date: <%= booking.date %> | Price: <%= booking.experience.price %> </li>         <div id="navbarCollapse">
+              <ul class="nav navbar-nav">
+                <li class="dropdown">
+                  <a data-toggle="dropdown" class="dropdown-toggle"  class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Próxima</a></li>
+                    <li><a href="#">Aceptada</a></li>
+                    <li><a href="#">Completada</a></li>
+                    <li><a href="#">Cancelada</a></li>
+                  </ul>
+                </li>
+              </ul>
+           </div>
       <% end %>
     <% else %>
       <li>You still have no bookings yet</li>
     <% end %>
-  </ul>
+
+   </ul>
 </div>
 
 

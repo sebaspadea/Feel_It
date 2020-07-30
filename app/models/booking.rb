@@ -1,7 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :experience # experience.user == seller
   belongs_to :user # user
-  ESTADO = %w(Proxima Completada Cancelada)
+  ESTADO = %w(Proxima Completada Cancelada Aceptada)
   validates :status, presence: true, inclusion: { in: ESTADO }
   validates :date, presence: true
 end
