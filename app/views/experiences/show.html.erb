@@ -1,7 +1,6 @@
 <div class= "container">
-<div class="show-banner my-3 rounded" style= "background-image: url(<%= cl_image_path @experience.photo.key %>);" >
-
-   <h2 class="experience-title"><%= @experience.name %></h2>
+  <div class="show-banner my-3 rounded" style= "background-image: url(<%= cl_image_path @experience.photo.key %>);" >
+    <h2 class="experience-title"><%= @experience.name %></h2>
   </div>
 </div>
 
@@ -34,36 +33,28 @@
     <div class="border p-5 ">
       <div class="col-12 col-lg-4">
         <div class="card-booking">
-           <div class="card-body">
+          <div class="card-body">
             <h5>Book this experience</h5>
             <p class="card-text"><h4>Precio <%= @experience.price %></h4></p>
-
-
             <div class="form-group text-center">
-              <%= simple_form_for  experience_bookings_path(:booking_id) do |f| %>
-              <%= f.input :date,  :label => "Fecha de la reserva",placeholder:"Fecha de la reserva", class: "experiencia" %>
-              <%= f.submit "Comprar", class:"btn btn-dark", message: "Gracias por su compra!" %>
-              <% end %>
-
-
-
-
+              <%= render "form2" %>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-    <div class="row">
-      <div class="col-12 col-lg-6">
+  <div class="row">
+    <div class="col-12 col-lg-6">
       <h3 class="mt-5 mb-3 border-bottom border-warning">Reviews</h3>
-        <ul class="list-group review-form">
-          <% @experience.reviews.each do |review| %>
+      <ul class="list-group review-form">
+        <% @experience.reviews.each do |review| %>
           <li class="list-group-item"><%="⭐"*review.rating %> <%= review.content %></li>
         <% end %>
       </ul>
     </div>
   </div>
+</div>
 
 
 
