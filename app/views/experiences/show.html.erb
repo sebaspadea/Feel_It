@@ -37,17 +37,8 @@
            <div class="card-body">
             <h5>Book this experience</h5>
             <p class="card-text"><h4>Precio <%= @experience.price %></h4></p>
-
-
             <div class="form-group text-center">
-              <%= simple_form_for  experience_bookings_path(:booking_id) do |f| %>
-              <%= f.input :date,  :label => "Fecha de la reserva",placeholder:"Fecha de la reserva", class: "experiencia" %>
-              <%= f.submit "Comprar", class:"btn btn-dark", message: "Gracias por su compra!" %>
-              <% end %>
-
-
-
-
+              <%= render "form2" %>
           </div>
         </div>
       </div>
