@@ -1,5 +1,8 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "user";
+
+
 
 .footer {
   background: #F4F4F4;
@@ -37,5 +40,6 @@
 #content-wrap {
   padding-bottom: 2.5rem;    /* Footer height */
 }
+
 
 
