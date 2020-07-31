@@ -1,9 +1,9 @@
 .home-banner {
-  background-image: image-url("yellow.jpeg");
+  // background-image: image-url("yellow.jpeg");
   justify-content: space-around;
   background-size: cover;
   height: 80vh;
-  color: #eee;
+  color: white;
   text-align: center;
   padding-top: 40vh;
   background-position: center;
@@ -11,15 +11,14 @@
 }
 
 .show-banner {
-  justify-content: space-around;
-  background-size: cover;
-  align-items: center;
-  background-position: bottom;
-  height: 100vh;
-  color: #eee;
-  text-align: center;
-  padding-top: 40vh;
-
+    justify-content: space-around;
+    background-size: cover;
+    align-items: center;
+    background-position: center;
+    height: 450px;
+    color: white;
+    text-align: center;
+    padding-top: 30vh;
 }
 
 

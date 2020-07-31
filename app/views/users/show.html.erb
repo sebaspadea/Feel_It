@@ -26,7 +26,7 @@
            <ul>
             <% if @experiences.any? %>
               <% @experiences.each do |experience| %>
-              <li><%= experience.name %> <%= link_to "Edit", edit_experience_path(experience["id"]),  class: "btn btn-outline-success"%> 
+              <li><%= experience.name %> <%= link_to "Edit", edit_experience_path(experience["id"]),  class: "btn btn-outline-success"%>
               <% if experience.bookings.empty? %>
               <%= link_to "Delete", experience_path(experience), class: "btn btn-outline-danger m-2", method: :delete, data: { confirm: "Are you sure?"} %></li>
               <% end %>
@@ -55,7 +55,9 @@
                 <% end %>
                 <%  if booking.status == "Completada"  %>
                 <%= link_to "Make a Review",  new_experience_review_path(booking.experience),  class: "btn btn-outline-warning"%>
-                <% end %></li>
+                <% end %>
+
+                </li>
                 <% end %>
             <% else %>
                 <li>You still have no bookings yet</li>

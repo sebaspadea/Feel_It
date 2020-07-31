@@ -27,6 +27,8 @@ class ExperiencesController < ApplicationController
     @experience = Experience.find(params[:id])
     @user = @experience.user
 
+    @booking = Booking.new
+
     # authorize @experience
   end
 
