@@ -1,37 +1,35 @@
-<div class= "container">
-  <div class="show-banner my-3 rounded" style= "background-image: url(<%= cl_image_path @experience.photo.key %>);" >
-    <h2 class="experience-title"><%= @experience.name %></h2>
-  </div>
-</div>
+
 
 <div class="container">
-  <div class="row">
+  <div class="show-banner my-3 rounded" style= "background-image: url(<%= cl_image_path @experience.photo.key %>);" >
+  <h2 class="experience-title"><%= @experience.name %></h2>
+  </div>
+  <div class="row mx-0">
+    <div class="row  col-6 ">
 
-    <div class="col-12 col-lg-8">
-      <div class="card-show">
-        <div class="card-body">
+      <div class="col-12  border  p-5  bg-white mr-2">
+        <div class="card-show">
           <h4 class="card-title"><%= @experience.name %></h4>
           <p>Experiencia ofrecida por <%= @user.username %></p>
           <br>
-          <p class="card-text"><%= @experience.description %></p>
+          <p class="categoria-description"><%= @experience.description %></p>
           <br>
-          <div class="availability">
+          <div class="categoria-availability">
             <p>Disponibilidad <%= @experience.availability %></p>
           </div>
           <div class="categoria-experiencia">
             <p>Category <%= @experience.category %></p>
           </div>
-          <div class="categoria-experiencia">
+          <div class="categoria-place">
             <p>Lugar <%= @experience.place%></p>
           </div>
-          <div class="categoria-experiencia">
+          <div class="categoria-price">
             <h4>$<%= @experience.price%></h4>
           </div>
         </div>
       </div>
-    </div>
-    <div class="border p-5 ">
-      <div class="col-12 col-lg-4">
+
+      <div class="col-12  border p-5 my-3 bg-white mr-2">
         <div class="card-booking">
           <div class="card-body">
             <h5>Book this experience</h5>
@@ -43,18 +41,27 @@
         </div>
       </div>
     </div>
+    <div class="row col-6 ml-4 mx-0">
+       <div id="map"
+          style="width: 110%; height: 100vh; position: sticky;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+    </div>
   </div>
-  <div class="row">
-    <div class="col-12 col-lg-6">
+  <div class="row my-3">
+    <div class="col-12 border p-3 bg-white ">
       <h3 class="mt-5 mb-3 border-bottom border-warning">Reviews</h3>
-      <ul class="list-group review-form">
-        <% @experience.reviews.each do |review| %>
-          <li class="list-group-item"><%="⭐"*review.rating %> <%= review.content %></li>
-        <% end %>
-      </ul>
+        <ul class="list-group review-form">
+          <% @experience.reviews.each do |review| %>
+            <li class="list-group-item"><%="⭐"*review.rating %> <%= review.content %></li>
+          <% end %>
+        </ul>
     </div>
   </div>
 </div>
+
+
 
 
 
