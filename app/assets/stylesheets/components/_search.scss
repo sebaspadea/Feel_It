@@ -1,21 +1,21 @@
 .search-form-control {
   position: relative;
-  width: 25%;
+  width: 100%;
   border-radius: 50px;
-  margin: 50px auto,
+  margin: 0px auto,
 
 }
 
 .search-form-control .btn {
   position: absolute;
   top: 8px;
-  bottom: 8px;
+  bottom: 10px;
   right: 8px;
   border-radius: 50px;
 }
 
 .search-form-control .form-control {
-  height: 3.5rem;
+  height: 3rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   border: 1px solid #E7E7E7;
   border-radius: 50px;

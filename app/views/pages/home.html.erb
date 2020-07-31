@@ -1,8 +1,21 @@
 <!-- DIV CLASS BANNER  -->
 
-<div class="home-banner">
-</div>
-
+<div class= "home-banner">
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+          <%= image_tag "yellow.jpeg", class: "d-block w-100" %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "jump.jpeg", class: "d-block w-100"  %>
+      </div>
+      <div class="carousel-item">
+      <%= image_tag "confeti.jpeg", class: "d-block w-100" %>
+      </div>
+      </div>
+    </div>
+  </div>
+  <%= video_tag "truffle1.mp4", :size => "320x240", :controls => true %>
 
 
 <div class="container">
