@@ -7,3 +7,57 @@ h2, h3{
   font-family: Roboto;
 }
 
+.card-title{
+  font-family: "Roboto", serif;
+  color: rgba(0, 0, 0, 0.74);
+  font-weight: 600;
+  .p {
+    font-family: Montserrat;
+    color: rgba(0, 0, 0, 0.74);
+
+  }
+
+}
+
+.tipografia {
+  font-family: "Roboto", serif;
+  font-size: 36px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.74);
+  text-align: center;
+}
+
+.experience-title{
+    font-family: "Roboto", serif;
+  font-size: 40px;
+  font-weight: 900;
+  color: rgba(233, 233, 233, 0.84);
+  text-align: center;
+
+}
+
+#book-font{
+   font-family: "Roboto", serif;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.74);
+
+}
+
+#experience-size{
+  font-size: 12px;
+}
+
+.categoria-description{
+  font-family: "Montserrat";
+  font-size: 20px;
+
+}
+
+body {
+  font-family: "Montserrat";
+}
+
+h6{
+  font-family: "Montserrat";
+
+}
