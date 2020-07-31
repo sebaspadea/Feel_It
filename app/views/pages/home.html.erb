@@ -40,15 +40,18 @@
           <% else %>
             <%= cl_image_tag "no disponible", height: 300, width: 300, crop: :fill, class: "img-fluid" %>
           <% end %>
-          <div class="card-product-infos">
+          <div class="card-product-infos w-100">
             <h2><%= experience.name %></h2>
             <p><%= experience.description%></p>
-            <p><strong> $ <%= experience.price %></strong></p>
-            <br>
+            <p class= "my-1"><strong> $ <%= experience.price %></strong></p>
               <%# Booking %>
-            <%= link_to "Book", new_experience_booking_path(experience.id), class: "btn btn-dark"%>
-              <%# VER MAS %>
-            <%= link_to "Ver Mas", experience_path(experience.id) , class: "btn btn-outline-warning" %>
+            <div class="row w-100">
+              <div class= "d-flex justify-content-end w-100">
+                <%= link_to "Book", new_experience_booking_path(experience.id), class: "btn btn-dark mx-1"%>
+                  <%# VER MAS %>
+                <%= link_to "Ver Mas", experience_path(experience.id) , class: "btn btn-outline-warning mx-1" %>
+              </div>
+            </div>
           </div>
         </div>
       <% end %>

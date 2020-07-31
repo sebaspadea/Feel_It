@@ -1,7 +1,5 @@
 
 
-
-
 <div class="container">
   <div class="show-banner my-3 rounded" style= "background-image: url(<%= cl_image_path @experience.photo.key %>);" >
   <h2 class="experience-title"><%= @experience.name %></h2>
@@ -9,7 +7,7 @@
   <div class="row mx-0">
     <div class="row  col-6 ">
 
-      <div class="col-12  border  p-5  bg-white">
+      <div class="col-12  border  p-5  bg-white mr-2">
         <div class="card-show">
           <h4 class="card-title"><%= @experience.name %></h4>
           <p>Experiencia ofrecida por <%= @user.username %></p>
@@ -31,9 +29,9 @@
         </div>
       </div>
 
-      <div class="col-12  border p-5 my-3 bg-white">
+      <div class="col-12  border p-5 my-3 bg-white mr-2">
         <div class="card-booking">
-           <div class="card-body">
+          <div class="card-body">
             <h5>Book this experience</h5>
             <p class="card-text"><h4>Precio <%= @experience.price %></h4></p>
             <div class="form-group text-center">
@@ -43,31 +41,26 @@
         </div>
       </div>
     </div>
-    <div class="row col-6">
+    <div class="row col-6 ml-4 mx-0">
        <div id="map"
-          style="width: 100%; height: 100vh;"
+          style="width: 110%; height: 100vh; position: sticky;"
           data-markers="<%= @markers.to_json %>"
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
     </div>
   </div>
-
-
-
-
-
-    <div class="row>
-      <div class="col-12 border p-5 bg-white">
-
-          <h3 class="mt-5 mb-3 border-bottom border-warning">Reviews</h3>
-          <ul class="list-group review-form">
-            <% @experience.reviews.each do |review| %>
-              <li class="list-group-item"><%="⭐"*review.rating %> <%= review.content %></li>
-            <% end %>
-          </ul>
-        </div>
+  <div class="row my-3">
+    <div class="col-12 border p-3 bg-white ">
+      <h3 class="mt-5 mb-3 border-bottom border-warning">Reviews</h3>
+        <ul class="list-group review-form">
+          <% @experience.reviews.each do |review| %>
+            <li class="list-group-item"><%="⭐"*review.rating %> <%= review.content %></li>
+          <% end %>
+        </ul>
     </div>
   </div>
+</div>
+
 
 
 
