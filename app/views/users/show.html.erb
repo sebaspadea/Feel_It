@@ -2,7 +2,7 @@
 
   <div class="container ">
   <div class="text-center ">
-    <h3><strong>Welcome</strong> <%= @user.first_name %> <%= @user.last_name %></h3>
+    <h2 class="fonts"><strong>Welcome</strong> <%= @user.first_name %> <%= @user.last_name %></h2>
   </div>
 </div>
 <div class="container">
@@ -10,7 +10,7 @@
     <div class="col-md-12">
       <div class="card my-3">
         <div class="card-body">
-          <h2 class="card-title">My personal info</h2>
+          <h3 class="card-title">My personal info</h3>
           <br>
           <h6>Username: <%= @user.username %></h6>
           <h6>Mail: <%= @user.email %></h6>
@@ -24,7 +24,7 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-body">
-          <h2 class="card-title">My experiences</h2>
+          <h3 class="card-title">My experiences</h3>
           <br>
            <ul lass="list-group">
             <% if @experiences.any? %>
@@ -48,7 +48,7 @@
     <div class="col-md-12 my-3">
       <div class="card">
         <div class="card-body">
-          <h2 class="card-title">My bookings</h2>
+          <h3 class="card-title">My bookings</h3>
           <br>
           <ul class="list-group">
             <% if @bookings.any? %>
