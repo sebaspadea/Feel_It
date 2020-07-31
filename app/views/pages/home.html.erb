@@ -1,55 +1,75 @@
 <!-- DIV CLASS BANNER  -->
 
-<div class= "home-banner">
-  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-          <%= image_tag "yellow.jpeg", class: "d-block w-100" %>
-      </div>
-      <div class="carousel-item">
-        <%= image_tag "jump.jpeg", class: "d-block w-100"  %>
-      </div>
-      <div class="carousel-item">
-      <%= image_tag "confeti.jpeg", class: "d-block w-100" %>
-      </div>
+
+<div class="home-banner">
+  <div class="blog-card spring-fever">
+    <div class="title-content">
+      <h3><a href="#">Feel It</a></h3>
+      <div class="intro">Animate a Vivir</div>
+    </div>
+    <div class="card-info">
+      La vida es una gran aventura.
+      Y tenemos que estar preparados para lanzarnos a ella. Deja de quejarte por estar
+      aburrido todo el dia. En Feel It encontraras un mundo de experiencias!
+
+      BIENVENIDO
+      <!-- <a href="#">Read Article<span class="licon icon-arr icon-black"></span></a> -->
+    </div>
+  <!--   <div class="utility-info">
+      <ul class="utility-list">
+        <li><span class="licon icon-like"></span><a href="#">2</a></li>
+        <li><span class="licon icon-com"></span><a href="#">12</a></li>
+        <li><span class="licon icon-dat"></span>03 jun 2017</li>
+        <li><span class="licon icon-tag"></span><a href="#">Photos</a>, <a href="#">Nice</a></li>
+      </ul>
+    </div> -->
+    <div class="gradient-overlay"></div>
+    <div class="color-overlay"></div>
+  </div><!-- /.blog-card -->
+</div>
+
+
+
+    <div class="container">
+      <div class="row">
+      <div class=" col-lg-6">
+
+
+        <% @experiences.each do |experience| %>
+        <div class="card-product">
+          <% if experience.photo.attached? %>
+            <%= cl_image_tag experience.photo.key, height: 300, width: 300, crop: :fill, class: "img-fluid" %>
+          <% else %>
+          <%= cl_image_tag "no disponible", height: 300, width: 300, crop: :fill, class: "img-fluid" %>
+        <% end %>
+      <div class="card-product-infos">
+        <h2><%= experience.name %></h2>
+        <p><%= experience.description%></p>
+        <p><strong> $ <%= experience.price %></strong></p>
+        <br>
+                <%# Booking %>
+        <%= link_to "Book", new_experience_booking_path(experience.id), class: "btn btn-dark"%>
+                <%# VER MAS %>
+        <%= link_to "Ver Mas", experience_path(experience.id) , class: "btn btn-outline-warning" %>
+      <% end %>
       </div>
     </div>
-  </div>
-  <%= video_tag "truffle1.mp4", :size => "320x240", :controls => true %>
-
-
-<div class="container">
-  <h1 class="text-center mt-3 mb-4">Experiencias destacadas</h1>
-  <div class="row">
-      <% @experiences.each do |experience| %>
-        <div class="col-md-4 my-3">
-          <div class="card-img-top">
-            <% if experience.photo.attached? %>
-              <%= cl_image_tag experience.photo.key, height: 300, width: 300, crop: :fill, class: "img-fluid" %>
-            <% else %>
-              <%= cl_image_tag "no disponible", height: 300, width: 300, crop: :fill, class: "img-fluid" %>
-            <% end %>
-          </div>
-            <h5 class="card-title"><%= experience.name %></h5>
-            <p> $ <%= experience.price %></p>
-            <div class="">
-              <%# Booking %>
-              <%= link_to "Book", new_experience_booking_path(experience.id), class: "btn btn-dark"%>
-              <%# VER MAS %>
-
-              <%= link_to "Ver Mas", experience_path(experience.id) , class: "btn btn-outline-warning" %>
+        </div>
+          <div class="col-12 col-lg-6">
+            <div id="map"
+                style="width: 100%; height: 600px;"
+                data-markers="<%= @markers.to_json %>"
+                data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
           </div>
         </div>
-      <% end %>
-  </div>
+      </div>
+    </div>
 
 
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 
-</div>
+
+
+
 
 
 

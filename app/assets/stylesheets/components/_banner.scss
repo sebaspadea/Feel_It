@@ -1,10 +1,11 @@
 .home-banner {
 
+  // background-image: image-url("yellow.jpeg");
   justify-content: space-around;
   background-size: cover;
-  height: 20%;
-  width: 100%;
-  color: #eee;
+  height: 80vh;
+  color: white;
+
   text-align: center;
   padding-bottom: 20px;
   background-position: center;
@@ -12,15 +13,14 @@
 }
 
 .show-banner {
-  justify-content: space-around;
-  background-size: cover;
-  align-items: center;
-  background-position: bottom;
-  height: 100vh;
-  color: #eee;
-  text-align: center;
-  padding-top: 40vh;
-
+    justify-content: space-around;
+    background-size: cover;
+    align-items: center;
+    background-position: center;
+    height: 450px;
+    color: white;
+    text-align: center;
+    padding-top: 30vh;
 }
 
 
